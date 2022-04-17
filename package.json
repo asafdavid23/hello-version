@@ -1,0 +1,11 @@
+{
+  "name": "web-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/asafdavid23/hello-version",
+  "author": "Asaf David",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
