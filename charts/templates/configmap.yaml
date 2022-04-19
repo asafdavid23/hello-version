@@ -5,4 +5,4 @@ metadata:
   labels:
     {{- include "web-app.labels" . | nindent 4 }}
 data:
-  version: {{ .image.tag }}
+  APP_VERSION: {{ .Values.image.tag }}
