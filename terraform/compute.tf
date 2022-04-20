@@ -31,6 +31,10 @@ curl -o /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat-stable/je
 rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
 dnf install jenkins -y
 systemctl start jenkins && systemctl enable jenkins
+yum install -y yum-utils
+yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+yum install docker-ce docker-ce-cli containerd.io
+systemctl start docker
   EOF
   
   service_account {
