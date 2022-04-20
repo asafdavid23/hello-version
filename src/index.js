@@ -7,7 +7,7 @@ const HOST = '0.0.0.0';
 const app = express();
 
 app.get('/', (req, res) => {
-    res.send(`Welcome to ${process.env.APP_VERSION}`)
+    res.send(`Welcome to v${process.env.APP_VERSION}`)
 })
 
 
