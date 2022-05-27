@@ -2,9 +2,9 @@ name: Docker Image CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ develop ]
   pull_request:
-    branches: [ main ]
+    branches: [ develop ]
 
 jobs:
 
@@ -14,5 +14,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    - uses: saml-to/assume-aws-role@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        role: "arn:aws:iam::300301835588:role/github-admin"
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag web-app:$(date +%s)
